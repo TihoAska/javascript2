@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <div class="kocka">
+      <div class="main">
+        <div class="row"></div>
+        <div class="row"></div>
+        <div class="row"></div>
+        <div class="row"></div>
+      </div>
+      <div class="main">
+        <div class="row"></div>
+        <div class="row"></div>
+        <div class="row"></div>
+        <div class="row"></div>
+      </div>
+      <div class="main">
+        <div class="row"></div>
+        <div class="row"></div>
+        <div class="row"></div>
+        <div class="row"></div>
+      </div>
+      <div class="main">
+        <div class="row"></div>
+        <div class="row"></div>
+        <div class="row"></div>
+        <div class="row"></div>
+      </div>
+    </div>
+  </body>
+
+  <script>
+    var kocke = document.querySelectorAll(".kocka");
+    //console.log(kocke);
+
+    var polje1 = [1, 2, 3, 4];
+    var polje2 = [5, 6, 7, 8];
+    var polje3 = [9, 10, 11, 12];
+    var polje4 = [13, 14, 15, 16];
+
+    var polje = [polje1, polje2, polje3, polje4];
+
+    for (let i = 0; i < polje.length; i++) {
+      for (let j = 0; j < polje1.length; j++) {
+        console.log(polje[i][j]);
+      }
+    }
+  </script>
+</html>
