@@ -34,20 +34,55 @@
   </body>
 
   <script>
-    var kocke = document.querySelectorAll(".kocka");
+    var kocke = document.querySelectorAll(".row");
+
     //console.log(kocke);
 
-    var polje1 = [1, 2, 3, 4];
-    var polje2 = [5, 6, 7, 8];
-    var polje3 = [9, 10, 11, 12];
-    var polje4 = [13, 14, 15, 16];
+    //TODO Random raspored kartica i umjesto brojeva se trebaju prikazivati slike
+    var memo = [
+        [1, 1, 2, 2],
+        [3, 3, 4, 4],
+        [5, 5, 6, 6],
+        [7, 7, 8, 8]
+    ];
 
-    var polje = [polje1, polje2, polje3, polje4];
+    first = -1;
+    second = -2;
 
-    for (let i = 0; i < polje.length; i++) {
-      for (let j = 0; j < polje1.length; j++) {
-        console.log(polje[i][j]);
-      }
+    flag = 0;
+    click = 0;
+    index = 0;
+
+
+    for (let i = 0; i < kocke.length; i++) {
+      kocke[i].addEventListener("click", function(){
+        kocke[i].innerHTML = memo[Math.floor(i/4)][i%4];
+        click++;
+        
+        if (flag %2 == 0){
+            first = memo[Math.floor(i/4)][i%4];
+        } else{
+            second = memo[Math.floor(i/4)][i%4];
+        }
+
+        flag++;
+
+        if(first == second){
+            console.log("Jednaki su!");
+        } else if (first != second){
+            if (click %2 == 0){
+                console.log("Nisu jednaki");
+            }
+            if (click % 3 == 0)
+            {
+                kocke[Math.floor(i/4)][i%4].innerHTML = ' ';
+                kocke[Math.floor(i/4)][i%4].innerHTML = ' ';
+            }
+        }
+      });
+
     }
+    Math.floor();
+    
   </script>
 </html>
